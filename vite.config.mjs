@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: true, // Esto permite que el servidor escuche en 0.0.0.0
-      port: 3007,
+      port: process.env.PORT || 3000,
       proxy: {
         // https://vitejs.dev/config/server-options.html
       },
