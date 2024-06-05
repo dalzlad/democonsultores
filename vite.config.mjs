@@ -49,6 +49,7 @@ export default defineConfig(({ mode }) => {
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue', '.scss'],
     },
     server: {
+      host: true, // Esto permite que el servidor escuche en 0.0.0.0
       port: 3007,
       proxy: {
         // https://vitejs.dev/config/server-options.html
