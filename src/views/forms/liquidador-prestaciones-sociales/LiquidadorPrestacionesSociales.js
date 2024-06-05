@@ -19,8 +19,8 @@ import {
 } from '@coreui/react'
 import { DocsExample } from 'src/components'
 import { differenceInDays, parseISO } from 'date-fns';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
+//import FullCalendar from '@fullcalendar/react';
+//import dayGridPlugin from '@fullcalendar/daygrid';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
