@@ -58,6 +58,5 @@
     "sass": "^1.71.1",
     "vite": "^5.1.6"
   },
-  "main": ".eslintrc.js",
-  "type": "module"
+  "main": ".eslintrc.js"
 }
