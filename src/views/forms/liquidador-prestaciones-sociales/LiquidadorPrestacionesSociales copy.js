@@ -410,12 +410,12 @@ const handleFileChange = (e) => {
       onSubmit={handleSubmit}
     >
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputNombresApellidos" className="col-sm-2 col-form-label custom-label" 
+      <CFormLabel htmlFor="inputNombresApellidos" className="col-sm-2 col-form-label" 
       
       >Nombres y Apellidos</CFormLabel>
       <CCol sm={4} >
         <CFormInput type="text" id="inputNombresApellidos"
-              className ="custom-height-text"
+              className="col-sm-2 col-form-label" 
               onChange={setInputNombresApellidos}
               defaultValue=""
               feedbackValid=""
@@ -423,30 +423,26 @@ const handleFileChange = (e) => {
         />
       </CCol>
 
-      <CFormLabel htmlFor="inputSalarioBase" className="col-sm-2 col-form-label custom-label">Salario Base</CFormLabel>
+      <CFormLabel htmlFor="inputSalarioBase" className="col-sm-2 col-form-label">Salario Base</CFormLabel>
       <CCol sm={3} >
         <CFormInput type="text" id="inputSalarioBase"  onChange={setInputSalarioBase}
         required
-        className ="custom-height-text"
         />
       </CCol>
 
-      <CFormLabel htmlFor="inputYear" className="col-sm-1 col-form-label custom-label">Año</CFormLabel>
+      <CFormLabel htmlFor="inputYear" className="col-sm-1 col-form-label">Año</CFormLabel>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputDocumento" className="col-sm-2 col-form-label custom-label">Documento Identificación</CFormLabel>
+      <CFormLabel htmlFor="inputDocumento" className="col-sm-2 col-form-label">Documento Identificación</CFormLabel>
       <CCol sm={4} >
         <CFormInput type="text" id="inputDocumento"
-        required
-        className ="custom-height-text"
-        />
+        required/>
       </CCol>
 
-      <CFormLabel htmlFor="inputInferiorA" className="col-sm-2 col-form-label custom-label">Inferior a $1.763.224</CFormLabel>
+      <CFormLabel htmlFor="inputInferiorA" className="col-sm-2 col-form-label">Inferior a $1.763.224</CFormLabel>
       <CCol sm={3} >
-          <CFormSelect size="md" className="mb-1" aria-label="Large select example"  onChange={setInputInferiorA}
-          class ="custom-height-text">
+          <CFormSelect size="md" className="mb-1" aria-label="Large select example"  onChange={setInputInferiorA}>
             <option>Seleccionar</option>
             <option value="1">SI</option>
             <option value="0">NO</option>
@@ -454,35 +450,31 @@ const handleFileChange = (e) => {
       </CCol>
 
       <CCol sm={1} >
-        <CFormInput type="text" id="inputAnio" className ="custom-height-text" />
+        <CFormInput type="text" id="inputDocumento"/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label custom-label" >Fecha de Ingreso</CFormLabel>
+      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label">Fecha de Ingreso</CFormLabel>
       <CCol sm={4} >
       <DatePicker
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         dateFormat="yyyy-MM-dd"
-       
       />
       </CCol>
 
-      <CFormLabel htmlFor="inputInferiorA" className="col-sm-2 col-form-label custom-label" >Subsidio de Transporte</CFormLabel>
+      <CFormLabel htmlFor="inputInferiorA" className="col-sm-2 col-form-label">Subsidio de Transporte</CFormLabel>
       <CCol sm={3} >
-        <CFormInput type="text" id="inputSubsidioTransporte" 
+        <CFormInput type="text" id="inputSubsidioTransporte"
         onChangeCapture={setInputSubsidioTransporte}
-        required
-        className ="custom-height-text"
-        />
+        required/>
       </CCol>
 
       <CCol sm={1} >
-          <CFormSelect size="md" className ="custom-height-text" id="slSubsidioTransporte" aria-label="Large select example"
+          <CFormSelect size="md" className="mb-3" id="slSubsidioTransporte" aria-label="Large select example"
           onChange={setSlSubsidioTransporte}
-          required
-          >
+          required>
             <option></option>
             <option value="1">SI</option>
             <option value="0">NO</option>
@@ -491,29 +483,26 @@ const handleFileChange = (e) => {
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaSalida" className="col-sm-2 col-form-label custom-label">Fecha de Salida</CFormLabel>
+      <CFormLabel htmlFor="inputFechaSalida" className="col-sm-2 col-form-label">Fecha de Salida</CFormLabel>
       <CCol sm={4} >
       <DatePicker
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         dateFormat="yyyy-MM-dd"
-        className ="custom-height-text"
       />
       </CCol>
 
-      <CFormLabel htmlFor="inputSubsidioAlimentacion" className="col-sm-2 col-form-label custom-label">Subsidio de Alimentación</CFormLabel>
+      <CFormLabel htmlFor="inputSubsidioAlimentacion" className="col-sm-2 col-form-label">Subsidio de Alimentación</CFormLabel>
       <CCol sm={3} >
         <CFormInput type="text" id="inputSubsidioAlimentacion"
         onChangeCapture={setInputSubsidioAlimentacion}
-        required
-        className ="custom-height-text"/>
+        required/>
       </CCol>
 
       <CCol sm={1} >
           <CFormSelect size="md" className="mb-3" id="slSubsidioAlimentacion" aria-label="Large select example"
           onChangeCapture={setSlSubsidioAlimentacion}
-          required
-          class ="custom-height-text">
+          required>
             <option></option>
             <option value="1">SI</option>
             <option value="0">NO</option>
@@ -521,19 +510,15 @@ const handleFileChange = (e) => {
       </CCol>
     </CRow>
 
-
-
-  <CRow>
-    <CCol sm="auto">
+    { /* 1.) Bonificación por Servicio Prestado */ }
     <CRow className="g-1">
-      <CFormLabel htmlFor="slBonficiacionServicioPrestado" className="col-sm-6 col-form-label custom-label">1.) Bonificación por Servicio Prestado</CFormLabel>
-      <CCol sm={6} >
-          <CFormSelect size="md-10" 
-         
+      <CFormLabel htmlFor="slBonficiacionServicioPrestado" className="col-sm-3 col-form-label">1.) Bonificación por Servicio Prestado</CFormLabel>
+      <CCol sm={1} >
+          <CFormSelect size="md" 
+            className="mb-3" 
             id="slBonficiacionServicioPrestado" 
             aria-label="Large select example" 
             onChange={setSlBonificacionServicioPrestado} 
-            className ="custom-height-text"
             required>
             <option></option>
             <option value="1">SI</option>
@@ -545,67 +530,66 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputAsignacionBasicaMensual" 
-          className="col-sm-5 col-form-label custom-label">Asignación Básica mensual </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Asignación Básica mensual </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputAsignacionBasicaMensual" 
           value={campoAsignacionBasicaMensual}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputPorcentajeBonificacionServicioPrestado" className="col-sm-5 col-form-label custom-label">Porcentaje</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputPorcentajeBonificacionServicioPrestado" className ="custom-height-text" value={campoPorcentajeBonificacionServicioPrestado+"%"} />
+      <CFormLabel htmlFor="inputPorcentajeBonificacionServicioPrestado" className="col-sm-2 col-form-label">Porcentaje</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputPorcentajeBonificacionServicioPrestado" value={campoPorcentajeBonificacionServicioPrestado+"%"} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-5 col-form-label custom-label">Fecha Inicial Liquidación</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputFechaInicialLiquidacion" className ="custom-height-text" value="1/1/2020"/>
+      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-2 col-form-label">Fecha Inicial Liquidación</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputFechaInicialLiquidacion" value="1/1/2020"/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-5 col-form-label  custom-label">Fecha Final Liquidación</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputFechaFinalLiquidacion"  className ="custom-height-text" value="9/3/2020" />
+      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-2 col-form-label">Fecha Final Liquidación</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputFechaFinalLiquidacion" value="9/3/2020" />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-5 col-form-label  custom-label">Días Transcurridos a Cotizar</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputFechaIngreso" className ="custom-height-text" value= {dias} />
+      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label">Días Transcurridos a Cotizar</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputFechaIngreso" value= {dias} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFPorcentajeNumeroDias" className="col-sm-5 col-form-label custom-label" >Porcentaje Según Número Días</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputFPorcentajeNumeroDias" className ="custom-height-text" value = {porcentajeNumeroDias}/>
+      <CFormLabel htmlFor="inputFPorcentajeNumeroDias" className="col-sm-2 col-form-label" >Porcentaje Según Número Días</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputFPorcentajeNumeroDias" value = {porcentajeNumeroDias}/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputTotalBonificacionServicioPrestado" className="col-sm-5 col-form-label custom-label">Total Bonificación por Servicio Prestado</CFormLabel>
-      <CCol sm={5} >
-        <CFormInput type="text" id="inputTotalBonificacionServicioPrestado" className ="custom-height-text" value={campoTotalBonificacionServicioPrestado} />
+      <CFormLabel htmlFor="inputTotalBonificacionServicioPrestado" className="col-sm-2 col-form-label">Total Bonificación por Servicio Prestado</CFormLabel>
+      <CCol sm={2} >
+        <CFormInput type="text" id="inputTotalBonificacionServicioPrestado" value={campoTotalBonificacionServicioPrestado} />
       </CCol>
     </CRow>
 
 
     { /* 2.) Prima de Servicio */ }
     <CRow className="g-1">
-      <CFormLabel htmlFor="slPrimaServicio" className="col-sm-5 col-form-label custom-label">2.) Prima Servicio</CFormLabel>
-      <CCol sm={5} >
+      <CFormLabel htmlFor="slPrimaServicio" className="col-sm-3 col-form-label">2.) Prima Servicio</CFormLabel>
+      <CCol sm={1} >
           <CFormSelect size="md" 
-            className ="custom-height-text"
+            className="mb-3" 
             id="slPrimaServicio" 
             aria-label="Large select example" 
             onChange={setSlPrimaServicio} 
@@ -620,14 +604,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputAsignacionBasicaMensualPrimaServicio" 
-          className="col-sm-5 col-form-label custom-label">Asignación Básica mensual </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Asignación Básica mensual </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputAsignacionBasicaMensualPrimaServicio" 
           value={campoAsignacionBasicaMensual}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -635,14 +618,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSubsidioTransportePrimaServicio" 
-          className="col-sm-5 col-form-label custom-label">Subsidio de Transporte </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Subsidio de Transporte </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSubsidioTransportePrimaServicio" 
          value = {campoSubsidioTransporte}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -650,14 +632,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSubsidioAlimentacionPrimaServicio" 
-          className="col-sm-5 col-form-label custom-label">Subsidio de Alimentación </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Subsidio de Alimentación </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSubsidioAlimentacionPrimaServicio" 
           value={campoSubsidioAlimentacion}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -665,14 +646,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputDoceavaBonificacionServicios" 
-          className="col-sm-5 col-form-label custom-label">Doceava Bonificación de Servicios </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Doceava Bonificación de Servicios </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputDoceavaBonificacionServicios" 
           value = {campoDoceavaBonificacionServicioPrestado}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -680,14 +660,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSalarioBaseMensualLiquidacionBonificacionServicios" 
-          className="col-sm-5 col-form-label custom-label">Salario Base Mensual de Liquidación </CFormLabel>
-      <CCol sm={5} >
+          className="col-sm-2 col-form-label">Salario Base Mensual de Liquidación </CFormLabel>
+      <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSalarioBaseMensualLiquidacionBonificacionServicios" 
           value = {campoSalarioBaseMensualLiquidacionBonificacionServicios}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -695,72 +674,65 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSalarioBaseDiarioLiquidacionBonificacionServicios" 
-          className="col-sm-2 col-form-label custom-label">Salario Base Diario de Liquidación </CFormLabel>
+          className="col-sm-2 col-form-label">Salario Base Diario de Liquidación </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSalarioBaseDiarioLiquidacionBonificacionServicios" 
           value = {campoSalarioBaseDiarioLiquidacionBonificacionServicios}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputPorcentajeBonificacionServicioPrestado" className="col-sm-2 col-form-label custom-label">Porcentaje</CFormLabel>
+      <CFormLabel htmlFor="inputPorcentajeBonificacionServicioPrestado" className="col-sm-2 col-form-label">Porcentaje</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputPorcentajeBonificacionServicioPrestado" 
-        value={campoPorcentajeBonificacionServicioPrestado+"%"} 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputPorcentajeBonificacionServicioPrestado" value={campoPorcentajeBonificacionServicioPrestado+"%"} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-2 col-form-label custom-label">Fecha Inicial Liquidación</CFormLabel>
+      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-2 col-form-label">Fecha Inicial Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaInicialLiquidacion" 
-        value="1/1/2020" className ="custom-height-text"/>
+        <CFormInput type="text" id="inputFechaInicialLiquidacion" value="1/1/2020"/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-2 col-form-label custom-label">Fecha Final Liquidación</CFormLabel>
+      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-2 col-form-label">Fecha Final Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaFinalLiquidacion" className ="custom-height-text" value="9/3/2020" />
+        <CFormInput type="text" id="inputFechaFinalLiquidacion" value="9/3/2020" />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label custom-label">Días Transcurridos a Cotizar</CFormLabel>
+      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label">Días Transcurridos a Cotizar</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaIngreso" value= {dias} className ="custom-height-text" />
+        <CFormInput type="text" id="inputFechaIngreso" value= {dias} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputDiasAplicaBeneficioServicioPrestado" className="col-sm-2 col-form-label custom-label" >Dias que Aplica el Beneficio</CFormLabel>
+      <CFormLabel htmlFor="inputDiasAplicaBeneficioServicioPrestado" className="col-sm-2 col-form-label" >Dias que Aplica el Beneficio</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputDiasAplicaBeneficioServicioPrestado" 
-        className ="custom-height-text"
-        value = {campoDiasAplicaBeneficioServicioPrestado}/>
+        <CFormInput type="text" id="inputDiasAplicaBeneficioServicioPrestado" value = {campoDiasAplicaBeneficioServicioPrestado}/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputTotalPrimaServicio" className="col-sm-2 col-form-label custom-label">Total Prima de Servicio</CFormLabel>
+      <CFormLabel htmlFor="inputTotalPrimaServicio" className="col-sm-2 col-form-label">Total Prima de Servicio</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputTotalPrimaServicio" value={campoTotalPrimaServicio}
-        className ="custom-height-text" />
+        <CFormInput type="text" id="inputTotalPrimaServicio" value={campoTotalPrimaServicio} />
       </CCol>
     </CRow>
 
     { /* 3.) Prima de Vacaciones */ }
     <CRow className="g-1">
-      <CFormLabel htmlFor="slPrimaVacaciones" className="col-sm-3 col-form-label custom-label">3.) Prima Vacaciones</CFormLabel>
+      <CFormLabel htmlFor="slPrimaVacaciones" className="col-sm-3 col-form-label">2.) Prima Vacaciones</CFormLabel>
       <CCol sm={1} >
           <CFormSelect size="md" 
-            className ="custom-height-text"
+            className="mb-3" 
             id="slPrimaVacaciones" 
             aria-label="Large select example" 
             onChange={setSlPrimaVacaciones} 
@@ -775,14 +747,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputAsignacionBasicaMensualPrimaVacaciones" 
-          className="col-sm-2 col-form-label custom-label">Asignación Básica mensual </CFormLabel>
+          className="col-sm-2 col-form-label">Asignación Básica mensual </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputAsignacionBasicaMensualPrimaVacaciones" 
           value={campoAsignacionBasicaMensual}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -790,14 +761,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSubsidioTransportePrimaVacaciones" 
-          className="col-sm-2 col-form-label custom-label">Subsidio de Transporte </CFormLabel>
+          className="col-sm-2 col-form-label">Subsidio de Transporte </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSubsidioTransportePrimaVacaciones" 
          value = {campoSubsidioTransporte}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -805,14 +775,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSubsidioAlimentacionPrimaVacaciones" 
-          className="col-sm-2 col-form-label custom-label">Subsidio de Alimentación </CFormLabel>
+          className="col-sm-2 col-form-label">Subsidio de Alimentación </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSubsidioAlimentacionPrimaVacaciones" 
           value={campoSubsidioAlimentacion}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -820,14 +789,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputDoceavaBonificacionServicios" 
-          className="col-sm-2 col-form-label custom-label">Doceava Bonificación de Servicios </CFormLabel>
+          className="col-sm-2 col-form-label">Doceava Bonificación de Servicios </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputDoceavaBonificacionServicios" 
           value = {campoDoceavaBonificacionServicioPrestado}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -835,14 +803,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputDoceavaPrimaServicios" 
-          className="col-sm-2 col-form-label custom-label">Doceava Prima de Servicios </CFormLabel>
+          className="col-sm-2 col-form-label">Doceava Prima de Servicios </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputDoceavaPrimaServicios" 
           value = {campoDoceavaPrimaServicios}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -850,14 +817,13 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSalarioBaseMensualLiquidacionPrimaVacaciones" 
-          className="col-sm-2 col-form-label custom-label">Salario Base Mensual de Liquidación </CFormLabel>
+          className="col-sm-2 col-form-label">Salario Base Mensual de Liquidación </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSalarioBaseMensualLiquidacionPrimaVacaciones" 
           value = {campoSalarioBaseMensualLiquidacionBonificacionPrimaVacaciones}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -865,70 +831,58 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel 
           htmlFor="inputSalarioBaseDiarioLiquidacionPrimaVacaciones" 
-          className="col-sm-2 col-form-label custom-label">Salario Base Diario de Liquidación </CFormLabel>
+          className="col-sm-2 col-form-label">Salario Base Diario de Liquidación </CFormLabel>
       <CCol sm={2} >
         <CFormInput 
           type="text" 
           id="inputSalarioBaseDiarioLiquidacionPrimaVacaciones" 
           value = {campoSalarioBaseDiarioLiquidacionBonificacionPrimaVacaciones}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-2 col-form-label custom-label">Fecha Inicial Liquidación</CFormLabel>
+      <CFormLabel htmlFor="inputFechaInicialLiquidacion" className="col-sm-2 col-form-label">Fecha Inicial Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaInicialLiquidacion" value="1/1/2020"
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputFechaInicialLiquidacion" value="1/1/2020"/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-2 col-form-label custom-label">Fecha Final Liquidación</CFormLabel>
+      <CFormLabel htmlFor="inputFechaFinalLiquidacion" className="col-sm-2 col-form-label">Fecha Final Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaFinalLiquidacion" value="9/3/2020" 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputFechaFinalLiquidacion" value="9/3/2020" />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label custom-label">Días Transcurridos a Cotizar</CFormLabel>
+      <CFormLabel htmlFor="inputFechaIngreso" className="col-sm-2 col-form-label">Días Transcurridos a Cotizar</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputFechaIngreso" value= {dias} 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputFechaIngreso" value= {dias} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputDiasAplicaBeneficioPrimaVacaciones" className="col-sm-2 col-form-label custom-label" >Dias que Aplica el Beneficio</CFormLabel>
+      <CFormLabel htmlFor="inputDiasAplicaBeneficioPrimaVacaciones" className="col-sm-2 col-form-label" >Dias que Aplica el Beneficio</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputDiasAplicaBeneficioPrimaServicios" 
-        value = {campoDiasAplicaBeneficioPrimaVacaciones}
-        className ="custom-height-text"
-        />
+        <CFormInput type="text" id="inputDiasAplicaBeneficioPrimaServicios" value = {campoDiasAplicaBeneficioPrimaVacaciones}/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
-      <CFormLabel htmlFor="inputTotalPrimaVacaciones" className="col-sm-2 col-form-label custom-label">Total Prima de Vacaciones</CFormLabel>
+      <CFormLabel htmlFor="inputTotalPrimaVacaciones" className="col-sm-2 col-form-label">Total Prima de Vacaciones</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputTotalPrimaVacaciones" value={campoTotalPrimaVacaciones} 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputTotalPrimaVacaciones" value={campoTotalPrimaVacaciones} />
       </CCol>
     </CRow>
 
-    </CCol>
-
-
-    <CCol sm="auto">
     { /****************** 4.) Imdemnización Vacaciones */ }
     <CRow className="g-1">
       <CFormLabel htmlFor="slIndemnizacionVacaciones" className="col-sm-3 col-form-label">4.) Indemnización Vacaciones</CFormLabel>
       <CCol sm={1} >
           <CFormSelect size="md" 
-            className ="custom-height-text"
+            className="mb-3" 
             id="slIndemnizacionVacaciones" 
             aria-label="Large select example" 
             onChange={setSlIndemnizacionVacaciones} 
@@ -950,7 +904,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionAsignacionBasicaMensualPrimaVacaciones" 
           value={campoAsignacionBasicaMensual}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -965,7 +918,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionSubsidioTransportePrimaVacaciones" 
          value = {campoSubsidioTransporte}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -980,7 +932,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionSubsidioAlimentacionPrimaVacaciones" 
           value={campoSubsidioAlimentacion}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -995,7 +946,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionDoceavaBonificacionServicios" 
           value = {campoDoceavaBonificacionServicioPrestado}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -1010,7 +960,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionDoceavaPrimaServicios" 
           value = {campoIndemnizacionDoceavaPrimaServicios}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -1025,7 +974,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionSalarioBaseMensualLiquidacionPrimaVacaciones" 
           value = {campoIndemnizacionSalarioBaseMensualLiquidacionBonificacionPrimaVacaciones}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -1040,7 +988,6 @@ const handleFileChange = (e) => {
           id="inputIndemnizacionSalarioBaseDiarioLiquidacionPrimaVacaciones" 
           value = {campoIndemnizacionSalarioBaseDiarioLiquidacionBonificacionPrimaVacaciones}
           required = {false}
-          className ="custom-height-text"
         />
       </CCol>
     </CRow>
@@ -1048,41 +995,35 @@ const handleFileChange = (e) => {
     <CRow className="g-1">
       <CFormLabel htmlFor="inputIndemnizacionFechaInicialLiquidacion" className="col-sm-2 col-form-label">Fecha Inicial Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputIndemnizacionFechaInicialLiquidacion" value="1/1/2020"
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputIndemnizacionFechaInicialLiquidacion" value="1/1/2020"/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
       <CFormLabel htmlFor="inputIndemnizacionFechaFinalLiquidacion" className="col-sm-2 col-form-label">Fecha Final Liquidación</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputIndemnizacionFechaFinalLiquidacion" value="9/3/2020" 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputIndemnizacionFechaFinalLiquidacion" value="9/3/2020" />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
       <CFormLabel htmlFor="inputIndemnizacionFechaIngreso" className="col-sm-2 col-form-label">Días Transcurridos a Cotizar</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputIndemnizacionFechaIngreso" value= {dias} 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputIndemnizacionFechaIngreso" value= {dias} />
       </CCol>
     </CRow>
 
     <CRow className="g-1">
       <CFormLabel htmlFor="inputIndemnizacionDiasAplicaBeneficioPrimaVacaciones" className="col-sm-2 col-form-label" >Dias que Aplica el Beneficio</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputIndemnizacionDiasAplicaBeneficioPrimaServicios" 
-        value = {campoIndemnizacionDiasAplicaBeneficioPrimaVacaciones}
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputIndemnizacionDiasAplicaBeneficioPrimaServicios" value = {campoIndemnizacionDiasAplicaBeneficioPrimaVacaciones}/>
       </CCol>
     </CRow>
 
     <CRow className="g-1">
       <CFormLabel htmlFor="inputTotalIndemnizacionVacaciones" className="col-sm-2 col-form-label">Total Indemnización de Vacaciones</CFormLabel>
       <CCol sm={2} >
-        <CFormInput type="text" id="inputTotalIndemnizacionVacaciones" value={campoTotalIndemnizacionVacaciones} 
-        className ="custom-height-text"/>
+        <CFormInput type="text" id="inputTotalIndemnizacionVacaciones" value={campoTotalIndemnizacionVacaciones} />
       </CCol>
     </CRow>
 
@@ -1334,9 +1275,8 @@ const handleFileChange = (e) => {
     </CRow>
 
 
-    </CCol>
-    <CCol sm="auto">
-      { /****************** 7.) Cesantías*/ }
+
+{ /****************** 7.) Cesantías*/ }
 <CRow className="g-1">
       <CFormLabel htmlFor="slCesantias" className="col-sm-3 col-form-label">7.) Cesantías</CFormLabel>
       <CCol sm={1} >
@@ -1588,18 +1528,6 @@ const handleFileChange = (e) => {
         <CFormInput type="text" id="inputTotalInteresCesantias" value={campoTotalInteresCesantias} />
       </CCol>
     </CRow>
-
-    </CCol>
-  </CRow>
-
-
-    { /* 1.) Bonificación por Servicio Prestado */ }
-  
-
-   
-
-
-
 
     </CForm>
   )
